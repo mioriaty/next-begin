@@ -5,6 +5,7 @@ export interface SidebarState {
   isMinimal: boolean;
   handleOpenOrClose: () => void;
   handleClose: () => void;
+  handleChangeSidebar: () => void;
 }
 export const useSidebarStore = create<SidebarState>()((set) => ({
   isOpen: false,
@@ -14,5 +15,8 @@ export const useSidebarStore = create<SidebarState>()((set) => ({
   },
   handleOpenOrClose() {
     set((state) => ({ ...state, isOpen: !state.isOpen }));
+  },
+  handleChangeSidebar() {
+    set((state) => ({ ...state, isMinimal: !state.isMinimal }));
   },
 }));

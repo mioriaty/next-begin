@@ -1,3 +1,4 @@
+import Sidebar from "@/components/sidebar";
 import TopBar from "@/components/topbar";
 import { cn } from "@/lib/utils";
 import React, { FC, ReactNode } from "react";
@@ -12,7 +13,9 @@ const DashboardLayout: FC<{ children: ReactNode }> = ({ children }) => {
         className={cn(
           "lg:bg-gray-950 lg:overflow-hidden lg:pl-80 lg:pr-7 lg:py-7 [&:has([is-navbar-minimal])]:lg:pl-20" // khi phần tử con có class = is-navbar-minimal thì padding left = 20
         )}
-      ></main>
+      >
+        <Sidebar userLimitCount={1} />
+      </main>
       {children}
     </div>
   );
