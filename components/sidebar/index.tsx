@@ -1,7 +1,10 @@
 "use client";
 
 import Logo from "@/components/logo";
+import Navbar from "@/components/sidebar/navbar";
 import SidebarToggle from "@/components/sidebar/sidebar-toggle";
+import ThemeToggle from "@/components/sidebar/theme-toggle";
+import SubscriptionButton from "@/components/subscription-button";
 import { Progress } from "@/components/ui/progress";
 import { MAX_FREE_COUNT } from "@/constants";
 import { cn } from "@/lib/utils";
@@ -63,9 +66,11 @@ const Sidebar: FC<SidebarProps> = ({
                     />
                   </div>
                 )}
+                <SubscriptionButton isPro={isProPlan} />
               </div>
             )}
           </div>
+          <ThemeToggle />
         </div>
       </div>
     </div>
