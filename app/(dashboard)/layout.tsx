@@ -10,13 +10,13 @@ const DashboardLayout: FC<{ children: ReactNode }> = ({ children }) => {
   const isProPlan = false;
 
   return (
-    <div>
+    <div className="dashboard-layout">
       <header>
         <TopBar />
       </header>
       <main
         className={cn(
-          "lg:bg-gray-950 lg:overflow-hidden lg:pl-80 lg:pr-7 lg:py-7 [&:has([is-navbar-minimal])]:lg:pl-20" // khi phần tử con có class = is-navbar-minimal thì padding left = 20
+          "lg:bg-slate-950 lg:overflow-hidden lg:pl-80 lg:pr-7 lg:py-7 [&:has([is-navbar-minimal])]:lg:pl-20" // khi phần tử con có class = is-navbar-minimal thì padding left = 20
         )}
       >
         <Sidebar
@@ -31,7 +31,7 @@ const DashboardLayout: FC<{ children: ReactNode }> = ({ children }) => {
         <UpgradeProModal isProPlan={isProPlan} />
         <div
           className={cn(
-            "bg-background h-[calc(100vh-56px)]",
+            "bg-background h-[calc(100vh-56px)] relative z-[100]",
             "lg:rounded-3xl lg:p-7"
           )}
         >

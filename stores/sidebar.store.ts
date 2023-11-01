@@ -7,7 +7,7 @@ export interface SidebarState {
   handleClose: () => void;
   handleChangeSidebar: () => void;
 }
-export const useSidebarStore = create<SidebarState>()((set) => ({
+export const useSidebarStore = create<SidebarState>((set) => ({
   isOpen: false,
   isMinimal: false,
   handleClose() {
@@ -20,3 +20,8 @@ export const useSidebarStore = create<SidebarState>()((set) => ({
     set((state) => ({ ...state, isMinimal: !state.isMinimal }));
   },
 }));
+
+// Logger middleware
+useSidebarStore.subscribe((state) => {
+  console.log("State changed:", state);
+});
