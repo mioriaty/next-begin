@@ -43,16 +43,16 @@ const Sidebar: React.FC<SidebarProps> = ({
         className={cn(
           "absolute bottom-16 left-0 pl-4 pr-4 w-full",
           "lg:left-0",
-          isMinimal && "pl-2"
+          isMinimal && "pl-2 pr-2 w-fit !left-[50%] -translate-x-1/2"
         )}
       >
         <div
           className={cn(
             "mb-4 p-4 rounded-lg bg-indigo-950",
-            isMinimal && "w-fit"
+            isMinimal && "p-2 bg-transparent"
           )}
         >
-          <div className={cn("mb-4 flex items-center", isMinimal && "mb-0")}>
+          <div className={cn("mb-4 flex items-center", isMinimal && "mb-0 justify-center")}>
             {isLoaded ? (
               <>
                 <UserButton afterSignOutUrl="/" />

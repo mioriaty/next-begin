@@ -1,9 +1,11 @@
-import React from 'react'
+import ToolsNavigation from '@/components/dashboard/tools-navigation';
 
 const DashboardPage = () => {
   return (
-    <div>DashboardPage</div>
-  )
-}
+    <div>
+      <ToolsNavigation />
+    </div>
+  );
+};
 
-export default DashboardPage
+export default DashboardPage;

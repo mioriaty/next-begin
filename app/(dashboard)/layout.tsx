@@ -3,7 +3,7 @@ import Sidebar from "@/components/sidebar";
 import MobileSidebar from "@/components/sidebar/mobile-sidebar";
 import TopBar from "@/components/topbar";
 import { cn } from "@/lib/utils";
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 
 const DashboardLayout: FC<{ children: ReactNode }> = ({ children }) => {
   const userLimitCount = 0;
@@ -23,7 +23,7 @@ const DashboardLayout: FC<{ children: ReactNode }> = ({ children }) => {
           userLimitCount={userLimitCount}
           isProPlan={isProPlan}
           className={cn(
-            "fixed left-0 z-20 w-80 hidden [&:has([is-navbar-minimal]):w-fit]",
+            "fixed left-0 z-20 w-80 hidden [&:has([is-navbar-minimal])]:w-fit",
             "lg:block"
           )}
         />
@@ -31,7 +31,7 @@ const DashboardLayout: FC<{ children: ReactNode }> = ({ children }) => {
         <UpgradeProModal isProPlan={isProPlan} />
         <div
           className={cn(
-            "bg-background h-[calc(100vh-56px)] relative z-[100]",
+            "bg-background h-[calc(100vh-56px)] relative",
             "lg:rounded-3xl lg:p-7"
           )}
         >

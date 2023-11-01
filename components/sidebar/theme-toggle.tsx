@@ -16,7 +16,7 @@ const ThemeToggle = () => {
     <div
       className={cn(
         "p-2 rounded-lg flex items-center bg-indigo-950 w-fit cursor-pointer",
-        isMinimal && "w-14 h-14 justify-center"
+        isMinimal && "w-12 h-12 justify-center"
       )}
       onClick={handleToggle}
     >

@@ -7,6 +7,7 @@ export interface SidebarState {
   handleClose: () => void;
   handleChangeSidebar: () => void;
 }
+
 export const useSidebarStore = create<SidebarState>((set) => ({
   isOpen: false,
   isMinimal: false,
