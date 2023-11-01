@@ -9,13 +9,10 @@
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll": true
+    "source.fixAll": true,
+    "source.organizeImports": true
   },
-  "scss.scannerExclude": [
-    "**/.git"
-  ],
+  "scss.scannerExclude": ["**/.git"],
   "typescript.tsdk": "node_modules\\typescript\\lib",
-  "cSpell.words": [
-    "nextjs"
-  ]
+  "cSpell.words": ["nextjs"]
 }

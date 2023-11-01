@@ -2,15 +2,15 @@
 
 import { UserButton, useUser } from "@clerk/nextjs";
 
-import { cn } from "@/lib/utils";
 import Logo from "@/components/logo";
 import { Progress } from "@/components/ui/progress";
-import ThemeToggle from "./theme-toggle";
-import SidebarToggle from "./sidebar-toggle";
-import Navbar from "./navbar";
-import SubscriptionButton from "../subscription-button";
-import { useSidebarStore } from "@/stores/sidebar.store";
 import { MAX_FREE_COUNT } from "@/constants";
+import { cn } from "@/lib/utils";
+import { useSidebarStore } from "@/stores/sidebar.store";
+import SubscriptionButton from "../subscription-button";
+import Navbar from "./navbar";
+import SidebarToggle from "./sidebar-toggle";
+import ThemeToggle from "./theme-toggle";
 
 export interface SidebarProps {
   className?: string;
@@ -41,7 +41,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       <div
         className={cn(
-          "absolute bottom-8 left-0 pl-4 pr-4 w-full",
+          "absolute bottom-16 left-0 pl-4 pr-4 w-full",
           "lg:left-0",
           isMinimal && "pl-2"
         )}
