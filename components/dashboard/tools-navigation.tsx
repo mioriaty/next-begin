@@ -1,8 +1,13 @@
 import ToolItem from '@/components/dashboard/tool-item';
 import { TOOLS } from '@/constants';
 import { cn } from '@/lib/utils';
+import { FC } from 'react';
 
-const ToolsNavigation = () => {
+interface ToolsNavigationProps {
+  title?: string;
+}
+
+const ToolsNavigation: FC<ToolsNavigationProps> = ({ title = 'Unlock the power of AI' }) => {
   return (
     <div
       className={cn(
@@ -11,9 +16,11 @@ const ToolsNavigation = () => {
         '2xl:py-12',
       )}
     >
-      <div className="text-center mb-14">
-        <h3>Unlock the power of AI</h3>
-        <p className="text-muted-foreground text-lg mt-2">Chat with the smartest AI - Experience the power of AI with us</p>
+      <div className="text-center mb-10">
+        <h3>{title}</h3>
+        <p className="text-muted-foreground text-lg mt-2">
+          Chat with the smartest AI - Experience the power of AI with us
+        </p>
       </div>
 
       <div className="w-full max-w-[30.75rem] mx-auto">

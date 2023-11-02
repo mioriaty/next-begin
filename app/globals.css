@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html,
 body,
 :root {
@@ -73,16 +72,44 @@ body,
     --ring: 0 0% 83.1%;
   }
 
+  h2 {
+    @apply text-5xl;
+  }
+
+  h2,
+  h3 {
+    @apply font-semibold;
+  }
+
+  h3 {
+    @apply text-4xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h5,
+  h6 {
+    @apply font-medium;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
   .scrollbar-none {
     scrollbar-width: none;
   }
 
   .gradient-btn {
-    @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+    @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
