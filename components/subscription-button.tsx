@@ -1,33 +1,32 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Sparkles } from "lucide-react";
-import { FC, useState } from "react";
-import axios from "axios";
-import { toast } from "@/components/ui/use-toast";
+import { Button } from '@/components/ui/button';
+import { toast } from '@/components/ui/use-toast';
+import { cn } from '@/lib/utils';
+import axios from 'axios';
+import { Sparkles } from 'lucide-react';
+import { FC, useState } from 'react';
 
 interface SubscriptionButtonProps {
   isPro: boolean;
   className?: string;
 }
 
-const SubscriptionButton: FC<SubscriptionButtonProps> = ({
-  isPro,
-  className,
-}) => {
+const SubscriptionButton: FC<SubscriptionButtonProps> = ({ isPro, className }) => {
   const [loading, setLoading] = useState(false);
 
   const handleSubscribe = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get("/api/stripe");
+      const { data } = await axios.get('/api/stripe');
       // todo something after get data from stripe
+      location.href = data.url;
+      
     } catch (error) {
       toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request.",
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: 'There was a problem with your request.',
       });
     } finally {
       setLoading(true);
@@ -37,16 +36,13 @@ const SubscriptionButton: FC<SubscriptionButtonProps> = ({
   return (
     <div className={className}>
       <Button
-        variant={"outline"}
+        variant={'outline'}
         size="lg"
         disabled={loading}
         onClick={handleSubscribe}
-        className={cn(
-          "text-white w-full font-semibold border-none gradient-btn",
-          "hover:text-white"
-        )}
+        className={cn('text-white w-full font-semibold border-none gradient-btn', 'hover:text-white')}
       >
-        <span>{isPro ? "Manage subscription" : "Upgrade to pro"}</span>
+        <span>{isPro ? 'Manage subscription' : 'Upgrade to pro'}</span>
         <Sparkles />
       </Button>
     </div>
